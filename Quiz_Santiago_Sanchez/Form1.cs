@@ -65,7 +65,7 @@ namespace Quiz_Santiago_Sanchez
                 }
                 if (txtname.Text.Length > 1)
                 {
-                    Convert.ToInt64(txtname.Text.Remove(txtname.Text.Length - 1));
+                    Convert.ToInt64(txtname.Text.Remove(txtname.Text.Length));
                 }
                 if (txtname.Text.Length == 1) 
                 {
@@ -91,6 +91,11 @@ namespace Quiz_Santiago_Sanchez
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (cmbdocumento.Text == "" || txtdocumento.Text == "" || txtname.Text == "" || txtedad.Text == "")
+            {
+                MessageBox.Show("Falta Información Por Rellenar");
+                return;
+            }
             String genero = "";
             if (radioButton1.Checked) 
             {
